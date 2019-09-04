@@ -122,7 +122,7 @@ The base string used for the `action` and `status` topics. _(Default: yard/sprin
 
 #### Relay Parameters
 
-`RELAY_ACTIVE LOW`
+`RELAY_ACTIVE HIGH`
 Set to `LOW` if using an active-low relay module. Set to `HIGH` if using an active-high relay module. _(Default: HIGH)_
 
 #### Sprinkler Zone Parameters
