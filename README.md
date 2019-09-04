@@ -200,7 +200,7 @@ switch:
 
 See [Configuration Example](Examples/configuration.yaml) for a full zone setup.
 
-_Note: the "availability_topic" configuration parameter is available in Home Assistant as of version 0.55; it allows Home Assistant to display the cover as "unavailable" if SplHAsh goes offline unexpectedly. When SplHAsh reconnects to your broker, the cover controls will again be available in Home Assistant. SplHAsh forms its availability topic by suffixing "/availability" to the MQTT_CLIENTID parameter in config.h, and publishes "online" to that topic when connecting or reconnecting to the broker and "offline" when disconnecting from the broker._
+_Note: the "availability_topic" configuration parameter is available in Home Assistant as of version 0.55; it allows Home Assistant to display the switch as "unavailable" if SplHAsh goes offline unexpectedly. When SplHAsh reconnects to your broker, the switch controls will again be available in Home Assistant. SplHAsh forms its availability topic by suffixing "/availability" to the MQTT_CLIENTID parameter in config.h, and publishes "online" to that topic when connecting or reconnecting to the broker and "offline" when disconnecting from the broker._
 
 _Note: the "mdi:sprinkler" icon is available in Home Assistant as of version 0.98.1_
 
