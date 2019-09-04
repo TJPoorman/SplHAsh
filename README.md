@@ -40,17 +40,17 @@ Building SplHAsh to control up to 8 zones requires:
 
 | No. | Qty | Part | Link | Approx Price |
 | --- | --- | ---- | ---- | ------------ |
-| 1. | 1 | ESP8266-based microcontroller (e.g. NodeMCU) | [Link](https://www.amazon.com/gp/product/B07F61FG7V) | $ 7.00 |
-| 2. | 1 | 8 channel relay module | [Link](https://www.amazon.com/gp/product/B00KTELP3I) | $ 9.00 |
-| 3. | 1 | 74HC595 Shift Register | [Link](https://www.amazon.com/gp/product/B07HFWB9L9) | $ 6.00 |
-| 4. | 1 | 24v AC power adapter | [Link](https://www.amazon.com/gp/product/B0784S9358) | $ 14.00 |
-| 5. | 1 | AC to DC converter | [Link](https://www.amazon.com/gp/product/B00RE6QN4U) | $ 13.00 |
-| 6. | 1 | Mini solderless breadboard (400 tie-point) | [Link](https://www.amazon.com/gp/product/B00LSG5BJK) | $ 10.00 |
-| 7. | | Male-to-female breadboard jumper wires | [Link](https://www.amazon.com/gp/product/B07PLZC26F) | $ 6.00 |
+| 1. | 1 | ESP8266-based microcontroller (e.g. NodeMCU) | [Link](https://amzn.to/2MUYsIC) | $ 7.00 |
+| 2. | 1 | 8 channel relay module | [Link](https://amzn.to/2HLgE3a) | $ 9.00 |
+| 3. | 1 | 74HC595 Shift Register | [Link](https://amzn.to/2ZOSGu2) | $ 6.00 |
+| 4. | 1 | 24v AC power adapter | [Link](https://amzn.to/2NQm14M) | $ 14.00 |
+| 5. | 1 | AC to DC converter | [Link](https://amzn.to/2NQmzrm) | $ 13.00 |
+| 6. | 1 | Mini solderless breadboard (400 tie-point) | [Link](https://amzn.to/2ZMyEAg) | $ 10.00 |
+| 7. | | Male-to-female breadboard jumper wires | [Link](https://amzn.to/2MUwe0m) | $ 6.00 |
 | 8. | | Male-to-male breadboard jumper wires | | |
 | 9. | | Project box or case | | |
 
-**Approximate total cost for major components:** $ 55.00, even less if you are replacing an existing controller (you should be able to reuse the current power adapter).
+**Approximate total cost for major components:** $ 59.00, even less if you are replacing an existing controller (you should be able to reuse the current power adapter).
 
 _Note: You will need 1 shift register for every 8 zones in your setup._
 
