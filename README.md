@@ -71,7 +71,7 @@ You will modify the configuration parameters and upload the sketch to the NodeMC
 2. Add support for the ESP8266 to the Arduino IDE by following the instructions under "Installing with Boards Manager" [here](https://github.com/esp8266/arduino).
 3. Add the "PubSubClient" library to the Arduino IDE: follow the instructions for using the Library Manager [here](https://www.arduino.cc/en/Guide/Libraries#toc3), and search for and install the PubSubClient library.
 4. You may need to install a driver for the NodeMCU for your OS - Google for instructions for your specific microcontroller and platform, install the driver if necessary, and restart the Arduino IDE.
-5. Select your board from `Tools - Boards` in the Arduino IDE (e.g. "NodeMCU 1.0 (ESP-12E Module)").
+5. Select your board from `Tools -> Boards` in the Arduino IDE (e.g. "NodeMCU 1.0 (ESP-12E Module)").
 
 ### 2. Load the sketch in the Arduino IDE and modify the user parameters in config.h
 
@@ -155,7 +155,7 @@ If using a different ESP8266 microcontroller, follow that device's instructions 
 Open the Serial Monitor via `Tools -> Serial Monitor`. Reset your microcontroller. If all is working correctly, you should see something similar to the following messages:
 
 ```
-Starting GarHAge...
+Starting SplHAsh...
 Relay mode: Active-High
 
 Connecting to your-wifi-ssid.. WiFi connected - IP address: 192.168.1.100
