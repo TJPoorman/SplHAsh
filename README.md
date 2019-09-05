@@ -177,9 +177,19 @@ Subscribing to yard/sprinkler/8/action...
 
 If you receive these (or similar) messages, all appears to be working correctly. Disconnect the controller from your computer and prepare to install.
 
-## Installing GarHAge
+## Installing SplHAsh
 
-*TODO
+1. Install SplHAsh near your sprinkler wires
+2. Connect 1 wire from wall plug, 1 wire from the AC side of 5v converter, and the sprinkler common wire together
+3. Connect other wire from wall plug, other wire from AC side of 5v converter, and an extra wire together
+4. Connect the extra wire to a common terminal of the relay board
+5. Daisy-chain all common terminals of the relay board together
+6. Connect each zone wire to the corresponding NO terminal on the relay board
+7. Connect the positive DC wire of AC/DC converter to the 5v rail of the breadboard (the rail that `vin` pin is connected to)
+8. Connect the negative DC wire of AC/DC converter to the ground rail of the breadboard
+9. Plug the wall plug in
+
+![Wiring Schematic](/Wiring Schematic.png)
 
 _Done!_
 
