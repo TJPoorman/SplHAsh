@@ -54,7 +54,7 @@ Building SplHAsh to control up to 8 zones requires:
 
 _Note: You will need 1 shift register for every 8 zones in your setup._
 
-### Building GarHAge
+### Building SplHAsh
 
 Connect the breadboard according to this diagram:
 
