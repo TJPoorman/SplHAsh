@@ -56,7 +56,9 @@ _Note: You will need 1 shift register for every 8 zones in your setup._
 
 ### Building GarHAge
 
-* TODO
+Connect the breadboard according to this diagram:
+
+![Schematic](/SplHAsh.png)
 
 _Done!_
 
