@@ -189,7 +189,7 @@ If you receive these (or similar) messages, all appears to be working correctly.
 8. Connect the negative DC wire of AC/DC converter to the ground rail of the breadboard
 9. Plug the wall plug in
 
-![Wiring Schematic](/Wiring Schematic.png)
+![Wiring Schematic](/Wiring%20Schematic.png)
 
 _Done!_
 
