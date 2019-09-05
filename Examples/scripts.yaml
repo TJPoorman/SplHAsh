@@ -1,0 +1,69 @@
+script:
+  sprinkler_water_front_side:
+    alias: '[Sprinkler] Water Front/Side'
+    sequence:
+    - data:
+        entity_id: switch.sprinkler_zone_1
+      service: switch.turn_on
+    - delay: 00:30:00
+    - data:
+        entity_id: switch.sprinkler_zone_2
+      service: switch.turn_on
+    - delay: 00:15:00
+    - data:
+        entity_id: switch.sprinkler_zone_off
+      service: switch.turn_on
+
+  sprinkler_water_back:
+    alias: '[Sprinkler] Water Back'
+    sequence:
+    - data:
+        entity_id: switch.sprinkler_zone_3
+      service: switch.turn_on
+    - delay: 00:30:00
+    - data:
+        entity_id: switch.sprinkler_zone_4
+      service: switch.turn_on
+    - delay: 00:30:00
+    - data:
+        entity_id: switch.sprinkler_zone_5
+      service: switch.turn_on
+    - delay: 00:30:00
+    - data:
+        entity_id: switch.sprinkler_zone_6
+      service: switch.turn_on
+    - delay: 00:30:00
+    - data:
+        entity_id: switch.sprinkler_zone_off
+      service: switch.turn_on
+
+  sprinkler_water_all:
+    alias: '[Sprinkler] Water All'
+    sequence:
+    - data:
+        entity_id: switch.sprinkler_zone_1
+      service: switch.turn_on
+    - delay: 00:30:00
+    - data:
+        entity_id: switch.sprinkler_zone_2
+      service: switch.turn_on
+    - delay: 00:15:00
+    - data:
+        entity_id: switch.sprinkler_zone_3
+      service: switch.turn_on
+    - delay: 00:30:00
+    - data:
+        entity_id: switch.sprinkler_zone_4
+      service: switch.turn_on
+    - delay: 00:30:00
+    - data:
+        entity_id: switch.sprinkler_zone_5
+      service: switch.turn_on
+    - delay: 00:30:00
+    - data:
+        entity_id: switch.sprinkler_zone_6
+      service: switch.turn_on
+    - delay: 00:30:00
+    - data:
+        entity_id: switch.sprinkler_zone_off
+      service: switch.turn_on

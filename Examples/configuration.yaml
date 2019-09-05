@@ -1,0 +1,49 @@
+switch:
+  - platform: mqtt
+    name: "Sprinkler Zone Off"
+    state_topic: "yard/sprinkler/0/status"
+    command_topic: "yard/sprinkler/0/action"
+    availability_topic: "SplHAsh/availability"
+    icon: mdi:sprinkler
+
+  - platform: mqtt
+    name: "Sprinkler Zone 1"
+    state_topic: "yard/sprinkler/1/status"
+    command_topic: "yard/sprinkler/1/action"
+    availability_topic: "SplHAsh/availability"
+    icon: mdi:sprinkler
+
+  - platform: mqtt
+    name: "Sprinkler Zone 2"
+    state_topic: "yard/sprinkler/2/status"
+    command_topic: "yard/sprinkler/2/action"
+    availability_topic: "SplHAsh/availability"
+    icon: mdi:sprinkler
+
+  - platform: mqtt
+    name: "Sprinkler Zone 3"
+    state_topic: "yard/sprinkler/3/status"
+    command_topic: "yard/sprinkler/3/action"
+    availability_topic: "SplHAsh/availability"
+    icon: mdi:sprinkler
+
+  - platform: mqtt
+    name: "Sprinkler Zone 4"
+    state_topic: "yard/sprinkler/4/status"
+    command_topic: "yard/sprinkler/4/action"
+    availability_topic: "SplHAsh/availability"
+    icon: mdi:sprinkler
+
+  - platform: mqtt
+    name: "Sprinkler Zone 5"
+    state_topic: "yard/sprinkler/5/status"
+    command_topic: "yard/sprinkler/5/action"
+    availability_topic: "SplHAsh/availability"
+    icon: mdi:sprinkler
+
+  - platform: mqtt
+    name: "Sprinkler Zone 6"
+    state_topic: "yard/sprinkler/6/status"
+    command_topic: "yard/sprinkler/6/action"
+    availability_topic: "SplHAsh/availability"
+    icon: mdi:sprinkler

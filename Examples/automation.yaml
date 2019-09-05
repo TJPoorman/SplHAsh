@@ -1,0 +1,20 @@
+automation:
+  - id: sprinkler_water_all_zones
+    alias: '[Sprinkler] Water All Zones'
+    trigger:
+    - at: '22:00'
+      platform: time
+    condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wec
+        - thu
+        - fri
+        - sat
+        - sun
+    action:
+    - data:
+        entity_id: script.sprinkler_water_all
+      service: script.turn_on
