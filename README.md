@@ -13,7 +13,32 @@ One of the benefits of this system is it does not matter if you have 4 sprinkler
 
 ## Table of Contents
 
-* TODO
+- [SplHAsh](#splhash)
+  * [How SplHAsh works...](#how-splhash-works)
+  * [Hardware](#hardware)
+    * [Bill of Materials](#bill-of-materials)
+    * [Building SplHAsh](#building-splhash)
+  * [Software](#software)
+    * [1. Set up the Arduino IDE](#1-set-up-the-arduino-ide)
+    * [2. Load the sketch in the Arduino IDE and modify the user parameters in config.h](#2-load-the-sketch-in-the-arduino-ide-and-modify-the-user-parameters-in-configh)
+      * [Wifi Parameters](#wifi-parameters)
+      * [Static IP Parameters](#static-ip-parameters)
+      * [MQTT Parameters](#mqtt-parameters)
+      * [Relay Parameters](#relay-parameters)
+      * [Sprinkler Zone Parameters](#sprinkler-zone-parameters)
+      * [Shift Register Parameters](#shift-register-parameters)
+    * [3. Upload the sketch to your NodeMCU / microcontroller](#3-upload-the-sketch-to-your-nodemcu--microcontroller)
+    * [4. Check the Arduino IDE Serial Monitor](#4-check-the-arduino-ide-serial-monitor)
+  * [Installing SplHAsh](#installing-splhash)
+  * [Configuring Home Assistant](#configuring-home-assistant)
+    * [Example MQTT Switch Configuration](#example-mqtt-switch-configuration)
+    * [Example Script](#example-script)
+    * [Example Automation](#example-automation)
+  * [Contributing](#contributing)
+  * [Issues/Bug Reports/Feature Requests](#issuesbug-reportsfeature-requests)
+  * [Credits](#credits)
+  * [License](#license)
+
 
 ## How SplHAsh works...
 
