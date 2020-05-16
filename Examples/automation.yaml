@@ -1,20 +1,57 @@
 automation:
-  - id: sprinkler_water_all_zones
-    alias: '[Sprinkler] Water All Zones'
+  - id: 'sprinkler_zone_front_am'
+    alias: '[Sprinkler] Zone Front AM'
     trigger:
-    - at: '22:00'
-      platform: time
+    - platform: template
+      value_template: '{{ states(''sensor.time'') == states(''input_datetime.sprinkler_zone_front_am_on_time'').rsplit('':'',1)[0]
+        }}'
     condition:
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wec
-        - thu
-        - fri
-        - sat
-        - sun
+    - condition: state
+      entity_id: binary_sensor.sprinkler_zone_front_day_active
+      state: 'on'
     action:
     - data:
-        entity_id: script.sprinkler_water_all
+        entity_id: script.sprinkler_zone_front
+      service: script.turn_on
+  - id: 'sprinkler_zone_front_pm'
+    alias: '[Sprinkler] Zone Front PM'
+    trigger:
+    - platform: template
+      value_template: '{{ states(''sensor.time'') == states(''input_datetime.sprinkler_zone_front_pm_on_time'').rsplit('':'',1)[0]
+        }}'
+    condition:
+    - condition: state
+      entity_id: binary_sensor.sprinkler_zone_front_day_active
+      state: 'on'
+    action:
+    - data:
+        entity_id: script.sprinkler_zone_front
+      service: script.turn_on
+  - id: 'sprinkler_zone_back_am'
+    alias: '[Sprinkler] Zone Back AM'
+    trigger:
+    - platform: template
+      value_template: '{{ states(''sensor.time'') == states(''input_datetime.sprinkler_zone_back_am_on_time'').rsplit('':'',1)[0]
+        }}'
+    condition:
+    - condition: state
+      entity_id: binary_sensor.sprinkler_zone_back_day_active
+      state: 'on'
+    action:
+    - data:
+        entity_id: script.sprinkler_zone_back
+      service: script.turn_on
+  - id: 'sprinkler_zone_back_pm'
+    alias: '[Sprinkler] Zone Back PM'
+    trigger:
+    - platform: template
+      value_template: '{{ states(''sensor.time'') == states(''input_datetime.sprinkler_zone_back_pm_on_time'').rsplit('':'',1)[0]
+        }}'
+    condition:
+    - condition: state
+      entity_id: binary_sensor.sprinkler_zone_back_day_active
+      state: 'on'
+    action:
+    - data:
+        entity_id: script.sprinkler_zone_back
       service: script.turn_on

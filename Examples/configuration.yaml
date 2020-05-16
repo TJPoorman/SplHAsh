@@ -47,3 +47,191 @@ switch:
     command_topic: "yard/sprinkler/6/action"
     availability_topic: "SplHAsh/availability"
     icon: mdi:sprinkler
+
+binary_sensor:
+  - platform: template
+    sensors:
+      sprinkler_zone_front_day_active:
+        friendly_name: Irrigation Day Active
+        entity_id:
+          - sensor.date
+          - input_boolean.sprinkler_zone_front_mon
+          - input_boolean.sprinkler_zone_front_tue
+          - input_boolean.sprinkler_zone_front_wed
+          - input_boolean.sprinkler_zone_front_thu
+          - input_boolean.sprinkler_zone_front_fri
+          - input_boolean.sprinkler_zone_front_sat
+          - input_boolean.sprinkler_zone_front_sun
+        value_template: >-
+          {{ ( is_state('input_boolean.sprinkler_zone_front_mon', 'on') and now().weekday() == 0 )
+          or ( is_state('input_boolean.sprinkler_zone_front_tue', 'on') and now().weekday() == 1 )
+          or ( is_state('input_boolean.sprinkler_zone_front_wed', 'on') and now().weekday() == 2 )
+          or ( is_state('input_boolean.sprinkler_zone_front_thu', 'on') and now().weekday() == 3 )
+          or ( is_state('input_boolean.sprinkler_zone_front_fri', 'on') and now().weekday() == 4 )
+          or ( is_state('input_boolean.sprinkler_zone_front_sat', 'on') and now().weekday() == 5 )
+          or ( is_state('input_boolean.sprinkler_zone_front_sun', 'on') and now().weekday() == 6 ) }}
+
+  - platform: template
+    sensors:
+      sprinkler_zone_back_day_active:
+        friendly_name: Irrigation Day Active
+        entity_id:
+          - sensor.date
+          - input_boolean.sprinkler_zone_back_mon
+          - input_boolean.sprinkler_zone_back_tue
+          - input_boolean.sprinkler_zone_back_wed
+          - input_boolean.sprinkler_zone_back_thu
+          - input_boolean.sprinkler_zone_back_fri
+          - input_boolean.sprinkler_zone_back_sat
+          - input_boolean.sprinkler_zone_back_sun
+        value_template: >-
+          {{ ( is_state('input_boolean.sprinkler_zone_back_mon', 'on') and now().weekday() == 0 )
+          or ( is_state('input_boolean.sprinkler_zone_back_tue', 'on') and now().weekday() == 1 )
+          or ( is_state('input_boolean.sprinkler_zone_back_wed', 'on') and now().weekday() == 2 )
+          or ( is_state('input_boolean.sprinkler_zone_back_thu', 'on') and now().weekday() == 3 )
+          or ( is_state('input_boolean.sprinkler_zone_back_fri', 'on') and now().weekday() == 4 )
+          or ( is_state('input_boolean.sprinkler_zone_back_sat', 'on') and now().weekday() == 5 )
+          or ( is_state('input_boolean.sprinkler_zone_back_sun', 'on') and now().weekday() == 6 ) }}
+
+input_boolean:
+  sprinkler_zone_front_mon:
+    name: Monday
+    icon: mdi:calendar
+  sprinkler_zone_front_tue:
+    name: Tuesday
+    icon: mdi:calendar
+  sprinkler_zone_front_wed:
+    name: Wednesday
+    icon: mdi:calendar
+  sprinkler_zone_front_thu:
+    name: Thursday
+    icon: mdi:calendar
+  sprinkler_zone_front_fri:
+    name: Friday
+    icon: mdi:calendar
+  sprinkler_zone_front_sat:
+    name: Saturday
+    icon: mdi:calendar
+  sprinkler_zone_front_sun:
+    name: Sunday
+    icon: mdi:calendar
+
+  sprinkler_zone_back_mon:
+    name: Monday
+    icon: mdi:calendar
+  sprinkler_zone_back_tue:
+    name: Tuesday
+    icon: mdi:calendar
+  sprinkler_zone_back_wed:
+    name: Wednesday
+    icon: mdi:calendar
+  sprinkler_zone_back_thu:
+    name: Thursday
+    icon: mdi:calendar
+  sprinkler_zone_back_fri:
+    name: Friday
+    icon: mdi:calendar
+  sprinkler_zone_back_sat:
+    name: Saturday
+    icon: mdi:calendar
+  sprinkler_zone_back_sun:
+    name: Sunday
+    icon: mdi:calendar
+
+input_datetime:
+  sprinkler_zone_front_am_on_time:
+    name: AM Start Time
+    has_date: false
+    has_time: true
+  sprinkler_zone_front_pm_on_time:
+    name: PM Start Time
+    has_date: false
+    has_time: true
+
+  sprinkler_zone_back_am_on_time:
+    name: AM Start Time
+    has_date: false
+    has_time: true
+  sprinkler_zone_back_pm_on_time:
+    name: PM Start Time
+    has_date: false
+    has_time: true
+
+input_number:
+  sprinkler_zone_1_run_time:
+    name: Run Time
+    min: 0
+    max: 90
+    step: 5
+    unit_of_measurement: min
+    icon: mdi:clock
+
+  sprinkler_zone_2_run_time:
+    name: Run Time
+    min: 0
+    max: 90
+    step: 5
+    unit_of_measurement: min
+    icon: mdi:clock
+
+  sprinkler_zone_3_run_time:
+    name: Run Time
+    min: 0
+    max: 90
+    step: 5
+    unit_of_measurement: min
+    icon: mdi:clock
+
+  sprinkler_zone_4_run_time:
+    name: Run Time
+    min: 0
+    max: 90
+    step: 5
+    unit_of_measurement: min
+    icon: mdi:clock
+
+  sprinkler_zone_5_run_time:
+    name: Run Time
+    min: 0
+    max: 90
+    step: 5
+    unit_of_measurement: min
+    icon: mdi:clock
+
+  sprinkler_zone_6_run_time:
+    name: Run Time
+    min: 0
+    max: 90
+    step: 5
+    unit_of_measurement: min
+    icon: mdi:clock
+
+sensor:
+  - platform: template
+    sensors:
+      sprinkler_zone_front_last_cycle_time:
+        friendly_name: 'Last Cycle Ended'
+        value_template: >
+          {% set runtime = 0.0 %}
+          {% set runtime = runtime + ( states("input_number.sprinkler_zone_1_run_time") | float ) %}
+          {% set runtime = runtime + ( states("input_number.sprinkler_zone_2_run_time") | float ) %}
+          {{ ( as_timestamp(state_attr("script.sprinkler_zone_front", "last_triggered")) + runtime | float * 60 ) | timestamp_custom("%m/%d/%Y %I:%M %p") }}
+      sprinkler_zone_back_last_cycle_time:
+        friendly_name: 'Last Cycle Ended'
+        value_template: >
+          {% set runtime = 0.0 %}
+          {% set runtime = runtime + ( states("input_number.sprinkler_zone_3_run_time") | float ) %}
+          {% set runtime = runtime + ( states("input_number.sprinkler_zone_4_run_time") | float ) %}
+          {% set runtime = runtime + ( states("input_number.sprinkler_zone_5_run_time") | float ) %}
+          {% set runtime = runtime + ( states("input_number.sprinkler_zone_6_run_time") | float ) %}
+          {{ ( as_timestamp(state_attr("script.sprinkler_zone_back", "last_triggered")) + runtime | float * 60 ) | timestamp_custom("%m/%d/%Y %I:%M %p") }}
+      sprinkler_zone_front_time_remaining:
+        friendly_name: 'Time Remaining'
+        value_template: >
+          {% set lastcycle = strptime(states("sensor.sprinkler_zone_front_last_cycle_time"), "%m/%d/%Y %I:%M %p").timestamp() %}
+          {{ ( ( lastcycle - now().timestamp() | float ) / 60 ) | int }} Minutes
+      sprinkler_zone_back_time_remaining:
+        friendly_name: 'Time Remaining'
+        value_template: >
+          {% set lastcycle = strptime(states("sensor.sprinkler_zone_back_last_cycle_time"), "%m/%d/%Y %I:%M %p").timestamp() %}
+          {{ ( ( lastcycle - now().timestamp() | float ) / 60 ) | int }} Minutes
